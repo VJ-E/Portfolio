@@ -6,17 +6,38 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-My Personal Portfolio.
+<br />
 
-![Portfolio Preview](public/image.png)
+<div align="center">
+  <img src="public/image.png" alt="Portfolio Preview" width="100%" />
+</div>
+
+<br />
+
+# Hi there, I'm Vijay!
+
+I'm a **Computer Science (AI & ML)** student passionate about building cool web apps and solving algorithmic problems. This portfolio is my corner of the internet where I showcase my work.
+
+[Visit my Portfolio](https://portfolio-indol-sigma-76.vercel.app)
+
+
+<br />
+
+## Tech Stack
+
+| Frontend | Backend | Languages & Tools |
+| :---: | :---: | :---: |
+| ![Next.js](https://skillicons.dev/icons?i=nextjs) ![React](https://skillicons.dev/icons?i=react) ![Tailwind](https://skillicons.dev/icons?i=tailwind) | ![Node.js](https://skillicons.dev/icons?i=nodejs) ![MongoDB](https://skillicons.dev/icons?i=mongodb) | ![TypeScript](https://skillicons.dev/icons?i=ts) ![Python](https://skillicons.dev/icons?i=py) ![Java](https://skillicons.dev/icons?i=java) ![Git](https://skillicons.dev/icons?i=git) |
+
+<br />
 
 ## Features
 
 - **Dock Navigation**: Interactive macOS-style dock for smooth navigation.
 - **Particle Effects**: Dynamic background particles for visual depth.
-- **Horizontal Scroll**: Unique horizontal scrolling interaction for projects.
+- **Horizontal Scroll**: Unique scrolling interaction for projects (optimized for mobile!).
 - **Dark/Light Mode**: Themed interface support.
-- **Responsive Design**: Optimized for various screen sizes.
+- **Responsive Design**: Looks great on Phones, Tablets, and Desktops.
 
 ## Getting Started
 
@@ -30,4 +51,4 @@ My Personal Portfolio.
     npm run dev
     ```
 
-3.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3.  Open [http://localhost:3000](http://localhost:3000) with your browser.
