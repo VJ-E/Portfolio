@@ -6,7 +6,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-Portfolio of a Computer Science Student.
+My Personal Portfolio.
 
 ![Portfolio Preview](public/image.png)
 
