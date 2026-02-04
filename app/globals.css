@@ -595,9 +595,81 @@ nextjs-portal,
     --color-error: var(--destructive) !important;
     --color-error-content: var(--primary-foreground) !important;
 
-    --radius-selector: var(--radius) !important;
-    --radius-field: var(--radius) !important;
-    --radius-box: var(--radius) !important;
     --border: 1px !important;
+  }
+}
+
+/* Mobile Responsiveness Overrides */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+    /* 8px base for mobile to scale down everything slightly */
+  }
+
+  .heading-jumbo {
+    font-size: 3rem !important;
+    /* Smaller jumbo text */
+    line-height: 1.2 !important;
+  }
+
+  /* Subhead mobile adjustments */
+  .subhead,
+  p {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Dock adjustments container */
+  .dock-container {
+    padding-bottom: 20px;
+  }
+
+  /* Prevent horizontal overflow */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Projects scroll override validation */
+  .projects-section-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* CP Stats Mobile */
+  .cp-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px;
+  }
+
+  .cp-header {
+    border-right: none !important;
+    border-bottom: 2px solid var(--foreground);
+    padding-bottom: 16px;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .cp-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Experience Mobile */
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .experience-duration {
+    align-self: flex-start;
+    margin-top: 4px;
   }
 }

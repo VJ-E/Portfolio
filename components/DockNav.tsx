@@ -63,14 +63,49 @@ export default function DockNav() {
 
     ];
 
+    // Responsive Dock State
+    const [dockConfig, setDockConfig] = React.useState({
+        magnification: 70,
+        baseItemSize: 50,
+        panelHeight: 68,
+        distance: 200
+    });
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setDockConfig({
+                    magnification: 50,
+                    baseItemSize: 40,
+                    panelHeight: 58,
+                    distance: 100 // Smaller trigger zone for magnification
+                });
+            } else {
+                setDockConfig({
+                    magnification: 70,
+                    baseItemSize: 50,
+                    panelHeight: 68,
+                    distance: 200
+                });
+            }
+        };
+
+        // Initial check
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center pointer-events-none">
             <div className="pointer-events-auto">
                 <Dock
                     items={items}
-                    panelHeight={68}
-                    baseItemSize={50}
-                    magnification={70}
+                    panelHeight={dockConfig.panelHeight}
+                    baseItemSize={dockConfig.baseItemSize}
+                    magnification={dockConfig.magnification}
+                    distance={dockConfig.distance}
                 />
             </div>
         </div>

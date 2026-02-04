@@ -35,15 +35,15 @@ export default function Home() {
                 <br />
                 <TextBulrUp text={resumeData.profile.oneliner2} delay={2.5} />
               </div>
-              <div className="flex gap-4 justify-center">
-                <a href={resumeData.profile.github} target="_blank" className="button w-button bg-foreground text-background border-foreground lift-on-hover">GitHub</a>
-                <a href={resumeData.profile.resume_link} target="_blank" className="button w-button lift-on-hover">Resume</a>
+              <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href={resumeData.profile.github} target="_blank" className="button w-button bg-foreground text-background border-foreground lift-on-hover w-full md:w-auto text-center justify-center">GitHub</a>
+                <a href={resumeData.profile.resume_link} target="_blank" className="button w-button lift-on-hover w-full md:w-auto text-center justify-center">Resume</a>
               </div>
             </div>
           </div>
         </div>
         {/* Peeking Character */}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[45%] rotate-[-25deg] z-20 hidden md:block pointer-events-auto">
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[45%] rotate-[-25deg] z-20 hidden lg:block pointer-events-auto">
           <PeekingCharacter className="w-[400px] h-[400px] lg:w-[500px] lg:h-[500px]" />
         </div>
       </div>

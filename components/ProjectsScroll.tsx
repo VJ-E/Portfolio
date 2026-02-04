@@ -10,10 +10,22 @@ export default function ProjectsScroll() {
     const contentRef = useRef<HTMLDivElement>(null);
     const [xRange, setXRange] = useState(["0px", "0px"]);
     const [sectionHeight, setSectionHeight] = useState("100vh");
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const calculateScroll = () => {
-            if (contentRef.current && typeof window !== "undefined") {
+            if (typeof window === "undefined") return;
+
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+
+            if (mobile) {
+                setSectionHeight("auto");
+                setXRange(["0px", "0px"]);
+                return;
+            }
+
+            if (contentRef.current) {
                 const contentWidth = contentRef.current.scrollWidth;
                 const viewportWidth = window.innerWidth;
                 const scrollDist = contentWidth - viewportWidth + 100; // Adding padding buffer
@@ -22,16 +34,14 @@ export default function ProjectsScroll() {
                     setXRange(["1%", `-${scrollDist}px`]);
                     setSectionHeight(`${scrollDist + window.innerHeight}px`);
                 } else {
-                    setXRange(["0px", "0px"]); // No scroll needed
+                    setXRange(["0px", "0px"]);
                     setSectionHeight("100vh");
                 }
             }
         };
 
-        // Initial calculation with a small delay to ensure layout is ready
+        // Initial calculation
         const timer = setTimeout(calculateScroll, 100);
-
-        // Recalculate on resize
         window.addEventListener("resize", calculateScroll);
 
         return () => {
@@ -48,17 +58,23 @@ export default function ProjectsScroll() {
     const x = useTransform(scrollYProgress, [0, 1], xRange);
 
     return (
-        <section ref={targetRef} className="relative !bg-background z-10" style={{ height: sectionHeight }}>
-            <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-                <div className="w-full px-12 pb-8">
-                    <br />
-                    <br />
-                    <br />
+        <section
+            ref={targetRef}
+            className={`relative !bg-background z-10 ${isMobile ? "h-auto px-4 py-12" : ""}`}
+            style={{ height: isMobile ? "auto" : sectionHeight }}
+        >
+            <div className={`${isMobile ? "relative h-auto flex flex-col gap-8" : "sticky top-0 flex h-screen flex-col justify-center overflow-hidden"}`}>
+                <div className={`w-full ${isMobile ? "px-0 pb-4" : "px-12 pb-8"}`}>
+                    {!isMobile && <><br /><br /><br /></>}
                     <h2>Projects</h2>
                 </div>
-                <motion.div ref={contentRef} style={{ x }} className="flex gap-8 px-12 w-max">
+                <motion.div
+                    ref={contentRef}
+                    style={isMobile ? { x: 0 } : { x }}
+                    className={`${isMobile ? "flex flex-col gap-8 w-full" : "flex gap-8 px-12 w-max"}`}
+                >
                     {resumeData.projects.map((project, index) => (
-                        <div key={index} className="w-[400px] md:w-[650px] flex-shrink-0">
+                        <div key={index} className={`${isMobile ? "w-full" : "w-[400px] md:w-[650px] flex-shrink-0"}`}>
                             <ProjectCard
                                 title={project.title}
                                 description={project.description}

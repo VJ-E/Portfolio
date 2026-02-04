@@ -29,8 +29,8 @@ export default function AboutSection() {
                 </div>
 
                 {/* Right Side Character */}
-                <div className="relative flex justify-center lg:justify-end items-center order-2">
-                    <PeekingCharacter className="w-[400px] h-[400px] md:w-[500px] md:h-[500px]" />
+                <div className="relative hidden lg:flex justify-end items-center order-2">
+                    <PeekingCharacter className="w-[500px] h-[500px]" />
                 </div>
             </div>
         </div>
