@@ -10,6 +10,8 @@ import AboutSection from "@/components/AboutSection";
 import { resumeData } from "@/lib/data";
 import TextBulrUp from "@/components/TextBulrUp";
 import PeekingCharacter from "@/components/PeekingCharacter";
+import Certifications from "@/components/Certifications";
+import GithubSection from "@/components/GithubSection";
 
 export default function Home() {
   return (
@@ -71,6 +73,8 @@ export default function Home() {
         </div>
       </div>
 
+      <Certifications />
+
       {/* Skills Section */}
       <div className="section">
         <div className="container">
@@ -79,6 +83,9 @@ export default function Home() {
           <SkillsList />
         </div>
       </div>
+
+      {/* Github Section */}
+      <GithubSection />
 
       {/* CP Stats Section */}
       <div className="section">
