@@ -9,9 +9,9 @@ interface ProjectCardProps {
     date?: string;
 }
 
-export default function ProjectCard({ title, description, imageUrl, slug, link, date = "2025" }: ProjectCardProps) {
+export default function ProjectCard({ title, description, imageUrl, slug, link, date = "2025", className = "", thumbnailClassName = "" }: ProjectCardProps & { className?: string, thumbnailClassName?: string }) {
     return (
-        <div role="listitem" className="modal-wrapper project w-dyn-item">
+        <div role="listitem" className={`modal-wrapper project w-dyn-item ${className}`}>
             <div className="modal-header">
                 <div className="button-circles-wrap">
                     <div className="button-circle"></div>
@@ -22,7 +22,7 @@ export default function ProjectCard({ title, description, imageUrl, slug, link, 
                     <div>-project.html</div>
                 </div>
             </div>
-            <div style={{ backgroundImage: `url("${imageUrl}")` }} className="modal-thumbnail"></div>
+            <div style={{ backgroundImage: `url("${imageUrl}")` }} className={`modal-thumbnail ${thumbnailClassName}`}></div>
             <div className="modal-body">
                 <h3>{title}</h3>
                 <p>{description}</p>

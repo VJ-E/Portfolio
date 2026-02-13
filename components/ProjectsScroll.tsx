@@ -1,80 +1,49 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { resumeData } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectsScroll() {
-    const targetRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
-    const [xRange, setXRange] = useState(["0px", "0px"]);
-    const [sectionHeight, setSectionHeight] = useState("100vh");
-    const [isMobile, setIsMobile] = useState(false);
+    const [startIndex, setStartIndex] = useState(0);
+    const visibleCount = 3; // Show 3 items
 
-    useEffect(() => {
-        const calculateScroll = () => {
-            if (typeof window === "undefined") return;
+    // ... (rest of the logic remains similar but updated for 3 items)
+    const maxStartIndex = Math.max(0, resumeData.projects.length - visibleCount);
 
-            const mobile = window.innerWidth < 768;
-            setIsMobile(mobile);
+    const canGoLeft = startIndex > 0;
+    const canGoRight = startIndex < maxStartIndex;
 
-            if (mobile) {
-                setSectionHeight("auto");
-                setXRange(["0px", "0px"]);
-                return;
-            }
+    // Track direction for animation
+    const [direction, setDirection] = useState(0);
 
-            if (contentRef.current) {
-                const contentWidth = contentRef.current.scrollWidth;
-                const viewportWidth = window.innerWidth;
-                const scrollDist = contentWidth - viewportWidth + 100; // Adding padding buffer
+    const handleNext = () => {
+        if (canGoRight) {
+            setDirection(1);
+            setStartIndex((prev) => prev + 1);
+        }
+    };
 
-                if (scrollDist > 0) {
-                    setXRange(["1%", `-${scrollDist}px`]);
-                    setSectionHeight(`${scrollDist + window.innerHeight}px`);
-                } else {
-                    setXRange(["0px", "0px"]);
-                    setSectionHeight("100vh");
-                }
-            }
-        };
-
-        // Initial calculation
-        const timer = setTimeout(calculateScroll, 100);
-        window.addEventListener("resize", calculateScroll);
-
-        return () => {
-            window.removeEventListener("resize", calculateScroll);
-            clearTimeout(timer);
-        };
-    }, [resumeData]);
-
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start start", "end end"],
-    });
-
-    const x = useTransform(scrollYProgress, [0, 1], xRange);
+    const handlePrev = () => {
+        if (canGoLeft) {
+            setDirection(-1);
+            setStartIndex((prev) => prev - 1);
+        }
+    };
 
     return (
-        <section
-            ref={targetRef}
-            className={`relative !bg-background z-10 ${isMobile ? "h-auto px-4 py-12" : ""}`}
-            style={{ height: isMobile ? "auto" : sectionHeight }}
-        >
-            <div className={`${isMobile ? "relative h-auto flex flex-col gap-8" : "sticky top-0 flex h-screen flex-col justify-center overflow-hidden"}`}>
-                <div className={`w-full ${isMobile ? "px-0 pb-4" : "px-12 pb-8"}`}>
-                    {!isMobile && <><br /><br /><br /></>}
+        <section className="relative !bg-background z-10 py-12 overflow-hidden">
+            <div className="w-full px-4 md:px-8 flex flex-col gap-8">
+                <div className="container px-0 flex justify-between items-center mb-4">
                     <h2>Projects</h2>
                 </div>
-                <motion.div
-                    ref={contentRef}
-                    style={isMobile ? { x: 0 } : { x }}
-                    className={`${isMobile ? "flex flex-col gap-8 w-full" : "flex gap-8 px-12 w-max"}`}
-                >
+
+                {/* Mobile: Vertical Stack (Unchanged) */}
+                <div className="md:hidden flex flex-col gap-8">
                     {resumeData.projects.map((project, index) => (
-                        <div key={index} className={`${isMobile ? "w-full" : "w-[400px] md:w-[650px] flex-shrink-0"}`}>
+                        <div key={index} className="w-full">
                             <ProjectCard
                                 title={project.title}
                                 description={project.description}
@@ -84,7 +53,73 @@ export default function ProjectsScroll() {
                             />
                         </div>
                     ))}
-                </motion.div>
+                </div>
+
+                {/* Desktop: Carousel */}
+                <div className="hidden md:flex items-center gap-4 w-full">
+                    {/* Left Button */}
+                    <div className="w-12 flex-shrink-0 flex justify-center z-20">
+                        {canGoLeft && (
+                            <button
+                                onClick={handlePrev}
+                                className="p-3 rounded-full border-2 border-foreground bg-background hover:bg-foreground hover:text-background transition-all transform hover:scale-110 shadow-md"
+                                aria-label="Previous project"
+                            >
+                                <ChevronLeft size={24} />
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Cards Container */}
+                    <div className="flex-1 overflow-hidden">
+                        <motion.div
+                            className="flex gap-4"
+                            layout
+                        >
+                            <AnimatePresence mode="popLayout" initial={false} custom={direction}>
+                                {resumeData.projects.slice(startIndex, startIndex + visibleCount).map((project) => (
+                                    <motion.div
+                                        key={project.slug}
+                                        layout
+                                        custom={direction}
+                                        initial={{ opacity: 0, x: direction > 0 ? 50 : -50 }}
+                                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                                        exit={{ opacity: 0, x: direction > 0 ? -50 : 50, scale: 0.95 }}
+                                        transition={{
+                                            x: { type: "spring", stiffness: 300, damping: 30 },
+                                            opacity: { duration: 0.2 },
+                                            layout: { duration: 0.3 }
+                                        }}
+                                        className="w-[calc(33.333%-11px)] flex-shrink-0"
+                                    >
+                                        <ProjectCard
+                                            title={project.title}
+                                            description={project.description}
+                                            imageUrl="https://cdn.prod.website-files.com/5e8b5d6cee4cf17b3ee15385/5e8b5dc4a5a8f5f4c2572a88_1586191812022-image18.jpg"
+                                            slug={project.slug}
+                                            link={project.link}
+                                            className="h-full"
+                                            thumbnailClassName="!h-[200px] w-full object-cover"
+                                        />
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
+                        </motion.div>
+                    </div>
+
+                    {/* Right Button */}
+                    <div className="w-12 flex-shrink-0 flex justify-center z-20">
+                        {canGoRight && (
+                            <button
+                                onClick={handleNext}
+                                className="p-3 rounded-full border-2 border-foreground bg-background hover:bg-foreground hover:text-background transition-all transform hover:scale-110 shadow-md"
+                                aria-label="Next project"
+                            >
+                                <ChevronRight size={24} />
+                            </button>
+                        )}
+                    </div>
+                </div>
             </div>
         </section>
     );
