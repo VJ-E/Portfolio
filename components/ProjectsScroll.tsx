@@ -11,7 +11,13 @@ export default function ProjectsScroll() {
     const visibleCount = 3; // Show 3 items
 
     // ... (rest of the logic remains similar but updated for 3 items)
-    const maxStartIndex = Math.max(0, resumeData.projects.length - visibleCount);
+    // Generate unique keys for projects to handle duplicates
+    const projectsWithKeys = resumeData.projects.map((project, index) => ({
+        ...project,
+        uniqueKey: `${project.slug}-${index}`
+    }));
+
+    const maxStartIndex = Math.max(0, projectsWithKeys.length - visibleCount);
 
     const canGoLeft = startIndex > 0;
     const canGoRight = startIndex < maxStartIndex;
@@ -77,9 +83,9 @@ export default function ProjectsScroll() {
                             layout
                         >
                             <AnimatePresence mode="popLayout" initial={false} custom={direction}>
-                                {resumeData.projects.slice(startIndex, startIndex + visibleCount).map((project) => (
+                                {projectsWithKeys.slice(startIndex, startIndex + visibleCount).map((project) => (
                                     <motion.div
-                                        key={project.slug}
+                                        key={project.uniqueKey}
                                         layout
                                         custom={direction}
                                         initial={{ opacity: 0, x: direction > 0 ? 50 : -50 }}
