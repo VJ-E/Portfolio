@@ -1,3 +1,5 @@
+
+
 export const resumeData = {
   profile: {
     name: "Vijay E",
@@ -63,16 +65,52 @@ export const resumeData = {
       year: "2025",
       slug: "lost-and-found",
       description: "A web application for efficiently managing lost and found items on campus. Streamlines the process by allowing users to report lost/found items, search for belongings, and manage claims."
+    },
+    {
+      title: "Expense Tracker",
+      tech: "Java, Swing, MySQL, Maven",
+      link: "https://github.com/VJ-E/Expense-Tracker-Java-Maven",
+      year: "2025",
+      slug: "expense-tracker",
+      description: "Developed a desktop expense management system with add, update, delete, and category-based tracking. Integrated MySQL backend for secure storage, querying, and expense history retrieval. Designed an intuitive Java Swing UI with filter, and date-based tracking."
     }
   ],
   skills: {
-    languages: ["Java", "Python", "JavaScript", "TypeScript"],
-    frontend: ["React", "Next.js", "Tailwind CSS"],
-    backend: ["Socket.IO", "REST APIs"],
-    database: ["MongoDB", "MySQL", "Cloudinary"],
-    AI: ["Prompt Engineering"],
-    tools: ["Maven", "Git", "GitHub"],
-    core: ["DSA", "Problem Solving", "OOPS", "OS", "System Design"]
+    languages: [
+      { name: "Java", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png" },
+      { name: "Python", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" },
+      { name: "JavaScript", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/javascript.png" },
+      { name: "TypeScript", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png" }
+    ],
+    frontend: [
+      { name: "React", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/react.png" },
+      { name: "Next.js", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png" },
+      { name: "Tailwind CSS", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/tailwind_css.png" }
+    ],
+    backend: [
+      { name: "Socket.IO", icon: "" }, // No icon found in list
+      { name: "REST APIs", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/rest.png" }
+    ],
+    database: [
+      { name: "MongoDB", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/mongodb.png" },
+      { name: "MySQL", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/mysql.png" },
+      { name: "Cloudinary", icon: "" } // No icon found in list
+    ],
+    AI: [
+      { name: "Prompt Engineering", icon: "" } // No icon found in list
+    ],
+    tools: [
+      { name: "Maven", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/maven.png" },
+      { name: "Git", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/git.png" },
+      { name: "GitHub", icon: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/github.png" }
+    ],
+    core: [
+      { name: "DSA", icon: "" },
+      { name: "Problem Solving", icon: "" },
+      { name: "OOPS", icon: "" },
+      { name: "OS", icon: "" },
+      { name: "System Design", icon: "" }
+    ]
   },
   certifications: [
     {
@@ -113,5 +151,11 @@ export const resumeData = {
       activeDays: 365,
       totalContests: 120
     }
+  },
+  githubStats: {
+    contribution: 500,
+    activeDays: 181,
+    stars: 8,
+    link: "https://github.com/VJ-E"
   }
 };
