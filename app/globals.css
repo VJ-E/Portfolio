@@ -208,9 +208,9 @@ p {
 /* CP Stats & New Components */
 /* CP Stats & New Components */
 .grid-cp {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   margin-top: 24px;
   margin-bottom: 48px;
 }
@@ -225,9 +225,12 @@ p {
   text-decoration: none;
   color: inherit;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  aspect-ratio: 6/5;
+  /* Width slightly bigger than height */
+  height: 100%;
 }
 
 .cp-card:hover {
@@ -239,18 +242,17 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0;
-  border-bottom: none;
-  border-right: 2px solid var(--foreground);
-  padding-bottom: 0;
-  padding-right: 24px;
-  margin-right: 24px;
-  gap: 16px;
-  min-width: 200px;
+  width: 100%;
+  border-bottom: 2px solid var(--foreground);
+  border-right: none;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  padding-right: 0;
+  margin-right: 0;
 }
 
 .cp-title {
-  font-size: 1.5rem;
+  font-size: 4rem;
   font-weight: 700;
   margin: 0;
 }
@@ -258,17 +260,16 @@ p {
 .cp-badge {
   padding: 4px 12px;
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 2rem;
   font-weight: 600;
   border: 2px solid var(--foreground);
 }
 
 .cp-stats {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
 }
 
 .cp-stat-row {
@@ -276,18 +277,18 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .cp-label {
   font-weight: 500;
   color: var(--muted-foreground);
-  font-size: 0.875rem;
+  font-size: 2rem;
 }
 
 .cp-value {
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 2rem;
 }
 
 /* Experience */
@@ -637,6 +638,10 @@ nextjs-portal,
   .projects-section-mobile {
     display: flex !important;
     flex-direction: column !important;
+  }
+
+  .grid-cp {
+    grid-template-columns: 1fr !important;
   }
 
   /* CP Stats Mobile */

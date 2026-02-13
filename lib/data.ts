@@ -66,12 +66,13 @@ export const resumeData = {
     }
   ],
   skills: {
-    languages: ["Python", "Java", "TypeScript"],
-    frontend: ["Next.js", "Tailwind CSS"],
+    languages: ["Java", "Python", "JavaScript", "TypeScript"],
+    frontend: ["React", "Next.js", "Tailwind CSS"],
     backend: ["Socket.IO", "REST APIs"],
-    database: ["MongoDB", "Mongoose", "MySQL", "Cloudinary"],
+    database: ["MongoDB", "MySQL", "Cloudinary"],
+    AI: ["Prompt Engineering"],
     tools: ["Maven", "Git", "GitHub"],
-    core: ["DSA", "Problem Solving", "OOPS"]
+    core: ["DSA", "Problem Solving", "OOPS", "OS", "System Design"]
   },
   certifications: [
     {
@@ -89,10 +90,10 @@ export const resumeData = {
   ],
   cpStats: {
     leetcode: {
-      rating: "1863",
+      rating: "1935",
       rank: "Knight",
-      solved: "380+",
-      top: "5.42%",
+      solved: "400+",
+      top: "3.55%",
       link: "https://leetcode.com/u/VIJAY_E/"
     },
     codeforces: {
@@ -102,15 +103,15 @@ export const resumeData = {
       link: "https://codeforces.com/profile/VJ_E"
     },
     codechef: {
-      rating: "1711",
+      rating: "1741",
       rank: "3 Star",
       highestRank: "230",
       link: "https://www.codechef.com/users/kit23bam057"
     },
     totals: {
-      totalQuestions: 1018,
-      activeDays: 342,
-      totalContests: 100
+      totalQuestions: 1200,
+      activeDays: 365,
+      totalContests: 120
     }
   }
 };
