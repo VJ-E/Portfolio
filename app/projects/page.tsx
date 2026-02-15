@@ -19,8 +19,7 @@ export default function Projects() {
                                     key={index}
                                     title={project.title}
                                     description={project.description}
-                                    // Using a placeholder or specific image if avail, falling back to pattern
-                                    imageUrl={"https://cdn.prod.website-files.com/5e8b5d6cee4cf17b3ee15385/5e8b5dc4a5a8f5f4c2572a88_1586191812022-image18.jpg"}
+                                    imageUrl={project.imageUrl}
                                     slug={project.slug}
                                     link={project.link}
                                     date={project.year}

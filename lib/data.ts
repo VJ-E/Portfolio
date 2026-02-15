@@ -9,15 +9,15 @@ export const resumeData = {
     phone: "+91 9894555369",
     linkedin: "https://www.linkedin.com/in/vj-e/",
     github: "https://www.github.com/VJ-E",
-    oneliner1: "Software Engineer in the making.",
-    oneliner2: "I build impactful projects and consistently push my limits in coding challenges.",
+    oneliner1: "Algorithmic precision. Full Stack execution.",
+    oneliner2: "I don't just write code; I engineer solutions. From optimizing backend performance to crafting seamless user interfaces.",
     bio: "I am a Computer Science student specializing in AI & ML, with a strong passion for Full Stack Development and Competitive Programming. I build impactful projects and consistently push my limits in <br/> coding challenges.",
     resume_link: "https://drive.google.com/file/d/1qYCGavuIq-wib019RcHqazWLyFA5ZH4N/view?usp=sharing",
     about: [
-      "I’m a Computer Science undergraduate focused on building reliable software and improving problem-solving skills.",
-      "I work mainly with full-stack web development using Next.js, TypeScript, and MongoDB, and I actively practice data structures and algorithms through competitive programming.",
-      "I enjoy understanding how systems work end to end, from data modeling to performance and scalability.",
-      "I’m currently looking for software engineering opportunities where I can learn fast and contribute to real-world products."
+      "I am a B.E. Computer Science student with a dual focus: mastering competitive programming (1935 LeetCode rating) and building scalable full-stack applications.",
+      "I specialize in the MERN stack (MongoDB, Express, React, Node.js) and Java, leveraging algorithmic expertise to write efficient, production-ready code.",
+      "My projects range from complex networking simulations to full-stack alumni platforms, demonstrating my ability to handle both low-level system design and high-level user experience.",
+      "I am actively seeking internships where I can apply my competitive edge in problem-solving to deliver high-impact software solutions."
     ]
   },
   education: [
@@ -48,7 +48,8 @@ export const resumeData = {
       link: "https://github.com/VJ-E/Alumni-Connection-Platform",
       year: "2025",
       slug: "alumni-connection-platform",
-      description: "Built a full-stack alumni–student networking platform with real-time chat, event sharing, and role-based access. Implemented Clerk authentication, user profiles, news feed, posts, media sharing. Added PWA support, enabling offline use and installability."
+      description: "A web application to connect alumni and students, enabling networking, real-time messaging, event sharing, and professional growth. Built with Next.js, Clerk authentication, MongoDB Atlas, and Socket.IO for real-time communication.",
+      imageUrl: "/Alumni Connection.png"
     },
     {
       title: "Expense Tracker",
@@ -56,7 +57,8 @@ export const resumeData = {
       link: "https://github.com/VJ-E/Expense-Tracker-Java-Maven",
       year: "2025",
       slug: "expense-tracker",
-      description: "Developed a desktop expense management system with add, update, delete, and category-based tracking. Integrated MySQL backend for secure storage, querying, and expense history retrieval. Designed an intuitive Java Swing UI with filter, and date-based tracking."
+      description: "Expense Tracker application built with Java Swing and MySQL. This application helps users manage their expenses by category, track spending patterns, and maintain financial records in a user-friendly interface.",
+      imageUrl: "/Expense Tracker.png"
     },
     {
       title: "Lost and Found Management System",
@@ -64,15 +66,17 @@ export const resumeData = {
       link: "https://github.com/VJ-E/Lost-and-Found",
       year: "2025",
       slug: "lost-and-found",
-      description: "A web application for efficiently managing lost and found items on campus. Streamlines the process by allowing users to report lost/found items, search for belongings, and manage claims."
+      description: "A web application for efficiently managing lost and found items on campus. Streamlines the process by allowing users to report lost/found items, search for belongings, and manage claims.",
+      imageUrl: "/LostAndFound Thumbnil.png"
     },
     {
       title: "Expense Tracker",
       tech: "Java, Swing, MySQL, Maven",
       link: "https://github.com/VJ-E/Expense-Tracker-Java-Maven",
       year: "2025",
-      slug: "expense-tracker",
-      description: "Developed a desktop expense management system with add, update, delete, and category-based tracking. Integrated MySQL backend for secure storage, querying, and expense history retrieval. Designed an intuitive Java Swing UI with filter, and date-based tracking."
+      slug: "expense-tracker-java",
+      description: "Developed a desktop expense management system with add, update, delete, and category-based tracking. Integrated MySQL backend for secure storage, querying, and expense history retrieval. Designed an intuitive Java Swing UI with filter, and date-based tracking.",
+      imageUrl: "/Expense Tracker.png"
     }
   ],
   skills: {

@@ -53,7 +53,7 @@ export default function ProjectsScroll() {
                             <ProjectCard
                                 title={project.title}
                                 description={project.description}
-                                imageUrl="https://cdn.prod.website-files.com/5e8b5d6cee4cf17b3ee15385/5e8b5dc4a5a8f5f4c2572a88_1586191812022-image18.jpg"
+                                imageUrl={project.imageUrl}
                                 slug={project.slug}
                                 link={project.link}
                             />
@@ -68,10 +68,10 @@ export default function ProjectsScroll() {
                         {canGoLeft && (
                             <button
                                 onClick={handlePrev}
-                                className="p-3 rounded-full border-2 border-foreground bg-background hover:bg-foreground hover:text-background transition-all transform hover:scale-110 shadow-md"
+                                className="p-3 rounded-full border-2 border-foreground bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-110 shadow-md group"
                                 aria-label="Previous project"
                             >
-                                <ChevronLeft size={24} />
+                                <ChevronLeft size={24} className="text-white dark:text-black" />
                             </button>
                         )}
                     </div>
@@ -101,7 +101,7 @@ export default function ProjectsScroll() {
                                         <ProjectCard
                                             title={project.title}
                                             description={project.description}
-                                            imageUrl="https://cdn.prod.website-files.com/5e8b5d6cee4cf17b3ee15385/5e8b5dc4a5a8f5f4c2572a88_1586191812022-image18.jpg"
+                                            imageUrl={project.imageUrl}
                                             slug={project.slug}
                                             link={project.link}
                                             className="h-full"
@@ -118,10 +118,10 @@ export default function ProjectsScroll() {
                         {canGoRight && (
                             <button
                                 onClick={handleNext}
-                                className="p-3 rounded-full border-2 border-foreground bg-background hover:bg-foreground hover:text-background transition-all transform hover:scale-110 shadow-md"
+                                className="p-3 rounded-full border-2 border-foreground bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-110 shadow-md group"
                                 aria-label="Next project"
                             >
-                                <ChevronRight size={24} />
+                                <ChevronRight size={24} className="text-white dark:text-black" />
                             </button>
                         )}
                     </div>
