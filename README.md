@@ -9,7 +9,7 @@
 <br />
 
 <div align="center">
-  <img src="public/image.png" alt="Portfolio Preview" width="100%" />
+  <img src="public/Portfolio.gif" alt="Portfolio Preview" width="100%" />
 </div>
 
 <br />
