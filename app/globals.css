@@ -608,14 +608,15 @@ nextjs-portal,
   }
 
   .heading-jumbo {
-    font-size: 3rem !important;
-    /* Smaller jumbo text */
-    line-height: 1.2 !important;
+    font-size: 20vw !important;
+    /* Increase jumbo text to fit screen */
+    line-height: 1.1 !important;
   }
 
   /* Subhead mobile adjustments */
   .subhead,
   p {
+    font-size: 1.5rem !important;
     padding-left: 16px;
     padding-right: 16px;
   }

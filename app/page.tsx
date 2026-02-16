@@ -102,7 +102,7 @@ export default function Home() {
           <p className="subhead">Let's Get in Touch</p>
           <div className="flex gap-4">
             <Link href="/contact" className="button w-button lift-on-hover">Contact Form</Link>
-            <a href={`mailto:${resumeData.profile.email}`} className="button w-button bg-foreground text-background border-foreground lift-on-hover">Email Me</a>
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${resumeData.profile.email}`} target="_blank" className="button w-button bg-foreground text-background border-foreground lift-on-hover">Email Me</a>
           </div>
           <div className="mt-8">
             <Link href="/contact" className="text-lg font-medium hover:underline text-foreground inline-flex items-center gap-1">

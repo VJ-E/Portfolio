@@ -1,3 +1,4 @@
+import { details } from "framer-motion/client";
 
 
 export const resumeData = {
@@ -70,13 +71,22 @@ export const resumeData = {
       imageUrl: "/LostAndFound Thumbnil.png"
     },
     {
-      title: "Expense Tracker",
-      tech: "Java, Swing, MySQL, Maven",
-      link: "https://github.com/VJ-E/Expense-Tracker-Java-Maven",
+      title: "Portfolio Website",
+      tech: "Next.js 14, TypeScript, Tailwind CSS, Framer Motion",
+      link: "https://github.com/VJ-E/portfolio",
+      year: "2026",
+      slug: "portfolio",
+      description: "Portfolio website for showcasing projects, skills, and experience. Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.",
+      imageUrl: "/portfolio.png"
+    },
+    {
+      title: "ToDo Application",
+      tech: "Java Swing, MySQL",
+      link: "https://github.com/VJ-E/ToDo-Java-Maven",
       year: "2025",
-      slug: "expense-tracker-java",
-      description: "Developed a desktop expense management system with add, update, delete, and category-based tracking. Integrated MySQL backend for secure storage, querying, and expense history retrieval. Designed an intuitive Java Swing UI with filter, and date-based tracking.",
-      imageUrl: "/Expense Tracker.png"
+      slug: "todo-application",
+      description: "A Java-based Todo application with a graphical user interface that helps you manage your tasks efficiently",
+      imageUrl: ""
     }
   ],
   skills: {
@@ -122,6 +132,12 @@ export const resumeData = {
       detail: "Elite + Silver Medal",
       year: "2025",
       link: "https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/110/noc25-mg18/Course/NPTEL25MG18S54340736501302781.pdf"
+    },
+    {
+      name: "AWS Academy Graduate - Cloud Foundations",
+      detail: "",
+      year: "2026",
+      link: "https://www.credly.com/badges/b053e067-658d-4132-8d70-0774990acc0e"
     },
     {
       name: "Google – Foundations of Project Management",
