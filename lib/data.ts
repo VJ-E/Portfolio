@@ -13,7 +13,7 @@ export const resumeData = {
     oneliner1: "Algorithmic precision. Full Stack execution.",
     oneliner2: "I don't just write code; I engineer solutions. From optimizing backend performance to crafting seamless user interfaces.",
     bio: "I am a Computer Science student specializing in AI & ML, with a strong passion for Full Stack Development and Competitive Programming. I build impactful projects and consistently push my limits in <br/> coding challenges.",
-    resume_link: "https://drive.google.com/file/d/1qYCGavuIq-wib019RcHqazWLyFA5ZH4N/view?usp=sharing",
+    resume_link: "https://drive.google.com/file/d/1eCBdKsprohaoaGeYe_HVWOeK0UAmhyuu/view?usp=sharing",
     about: [
       "I am a B.E. Computer Science student with a dual focus: mastering competitive programming (1935 LeetCode rating) and building scalable full-stack applications.",
       "I specialize in the MERN stack (MongoDB, Express, React, Node.js) and Java, leveraging algorithmic expertise to write efficient, production-ready code.",
